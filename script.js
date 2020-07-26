@@ -66,7 +66,7 @@ async function init() {
         div.addClass("card", "col-lg-2")
         container.addClass("container")
 
-        btn.text(`get more info `)
+        btn.text(`get language`)
         btn.on("click", async () => {
 
             const userCountry = user.countryOfOrigin
