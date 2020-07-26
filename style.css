@@ -12,10 +12,9 @@ img {
 }
 
 .infoDiv {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   color: brown;
-  overflow: scroll;
 }
 .cardDiv {
   margin: 15px;

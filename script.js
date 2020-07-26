@@ -68,18 +68,15 @@ async function init() {
 
         btn.text(`get more info `)
         btn.on("click", async () => {
+
             const userCountry = user.countryOfOrigin
             console.log(userCountry)
             const countryInfo = await getAPI({ url: `https://restcountries.eu/rest/v2/name/${userCountry}` })
-            console.log(countryInfo);
-            const infoDiv = $("<div></div>").text(JSON.stringify(countryInfo)).toggleClass("infoDiv")
-
+            console.log(countryInfo[0].languages[0].name);
+            const infoDiv = $("<div></div>").text(JSON.stringify(countryInfo[0].languages[0].name)).toggleClass("infoDiv")
             container.append(infoDiv)
+        })
 
-        })
-        btn.on("click", () => {
-            infoDiv.remove()
-        })
 
         container.append(country, btn)
         div.append(name, img, container)
