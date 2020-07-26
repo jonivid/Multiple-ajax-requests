@@ -1,0 +1,23 @@
+#container-data {
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+  border: black solid 1px;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  margin-left: 70px;
+}
+
+.infoDiv {
+  width: 200px;
+  height: 200px;
+  color: brown;
+  overflow: scroll;
+}
+.cardDiv {
+  margin: 15px;
+  display: inline-block;
+}

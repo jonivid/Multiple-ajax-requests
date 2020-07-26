@@ -27,7 +27,7 @@ function getCity(user) {
 async function init() {
 
     try {
-        const response = await getAPI({ url: "https://randomuser.me/api/?results=10" })
+        const response = await getAPI({ url: "https://randomuser.me/api/?results=20" })
         const { results } = response
         // console.log(response);
         draw(response.results)
@@ -56,7 +56,7 @@ async function init() {
     function getCard(user) {
 
 
-        const div = $("<DIV></DIV>")
+        const div = $("<DIV></DIV>").addClass("cardDiv")
         const name = $("<h1></h1>").text(user.name)
         const img = $("<img></img>").attr("src", user.src)
         const country = $("<h1></h1>").text(user.countryOfOrigin)
@@ -72,11 +72,13 @@ async function init() {
             console.log(userCountry)
             const countryInfo = await getAPI({ url: `https://restcountries.eu/rest/v2/name/${userCountry}` })
             console.log(countryInfo);
-            const infoDiv = $("<div></div>").text(JSON.stringify(countryInfo))
+            const infoDiv = $("<div></div>").text(JSON.stringify(countryInfo)).toggleClass("infoDiv")
+
             container.append(infoDiv)
-            btn.on("click", () => {
-                infoDiv.remove()
-            })
+
+        })
+        btn.on("click", () => {
+            infoDiv.remove()
         })
 
         container.append(country, btn)
